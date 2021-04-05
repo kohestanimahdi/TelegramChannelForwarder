@@ -1,0 +1,9 @@
+{
+  "ApiHash": "4d190504eedfc8eb49832bed7e7c4392",
+  "ApiId": 1333571,
+  "ForwadTo": "kohestanitest1bot",
+  "DelayPerRound": 60, // should be in second
+  "DelayPerMessage": 500, // should be in mili second
+  "ForwardFrom": [],
+  "ForwardFromIds": [ 1258158509 ]
+}
