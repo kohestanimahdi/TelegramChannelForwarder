@@ -5,5 +5,6 @@
   "DelayPerRound": 60, // should be in second
   "DelayPerMessage": 500, // should be in mili second
   "ForwardFrom": [],
-  "ForwardFromIds": [ 1258158509 ]
+  "ForwardFromIds": [ 1258158509 ],
+  "SaveLog": true
 }

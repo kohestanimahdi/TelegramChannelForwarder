@@ -4,6 +4,7 @@ namespace TelegramForwarder.Services
 {
     public class TelegramSetting
     {
+        public bool SaveLog { get; set; }
         public string ApiHash { get; set; }
         public int ApiId { get; set; }
         public string ForwadTo { get; set; }

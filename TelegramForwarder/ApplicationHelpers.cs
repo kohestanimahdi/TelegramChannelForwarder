@@ -21,6 +21,9 @@ namespace TelegramForwarder
 
         public static void LogException(Exception exception)
         {
+            if (!Program.SaveLog)
+                return;
+
             lock (lockObject)
             {
                 var content = $"{DateTime.Now.ToLongTimeString()}{Environment.NewLine}";

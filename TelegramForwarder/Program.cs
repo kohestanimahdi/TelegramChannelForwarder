@@ -12,13 +12,16 @@ namespace TelegramForwarder
     {
         private static string mobile, password, hash, code;
         private static TelegramService telegram;
+        public static bool SaveLog = true;
         static void Main(string[] args)
         {
-            ApplicationHelpers.CreateIfNotExists();
             try
             {
+                ApplicationHelpers.CreateIfNotExists();
+
                 var setting = JsonConvert.DeserializeObject<TelegramSetting>(System.IO.File.ReadAllText("setting.json"));
 
+                SaveLog = setting.SaveLog;
 
                 Console.WriteLine("Trying to connect telegram...");
                 telegram = ConnectToTelegram(setting);
@@ -39,6 +42,11 @@ namespace TelegramForwarder
                     Console.Clear();
                     Thread.Sleep(TimeSpan.FromSeconds(setting.DelayPerRound));
                 }
+            }
+            catch (StackOverflowException ex)
+            {
+                ApplicationHelpers.LogException(ex);
+                Console.WriteLine("json file is not valid");
             }
             catch (System.Exception ex)
             {
